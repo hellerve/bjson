@@ -1,0 +1,8 @@
+(module "bjson"
+  (export
+    `("decode"  ,decode)
+    `("decode?" ,decode?))
+
+  (loads "bjson/priv/BJson")
+
+  (decode? (lambda (str) (catch-error `(,decode ,str)))))
